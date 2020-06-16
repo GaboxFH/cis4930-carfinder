@@ -7,7 +7,7 @@ Makek sure that you have the following installed:
 
 Go to the location where you want to clone the repo
 
-Clone repo: git clone https://github.com/GaboxFH/cis4930-carfinder.git
+Clone repo: `git clone https://github.com/GaboxFH/cis4930-carfinder.git`
 
 Go to new folder `cd cis4930-carfinder/`
 

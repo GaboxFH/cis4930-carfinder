@@ -1,6 +1,6 @@
-# cis4930-carfinder
+# Setup
 
-Makek sure that you have the following installed:
+Make sure that you have the following installed:
 - Python 3
 - WSL's Ubuntu (Or some other Linux distro)
 - You can run virtual enviroments

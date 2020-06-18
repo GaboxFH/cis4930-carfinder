@@ -17,9 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from finder import views
 from finder import forms
+from django.conf.urls.static import static
+from django.conf import settings
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.Index.as_view(), name='index'),
-    path('upload/', forms.upload, name='upload')
-]
+    path('upload/', forms.upload, name='upload'),
+    path('upload/predictImage', views.Index.predictImage,name="predictImage"),   
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

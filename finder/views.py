@@ -17,7 +17,7 @@ class Index(View):
         
         filePathName = fs.save(fileObj.name,fileObj)
         filePathName = fs.url(filePathName)
-
+        print(filePathName)
         context={'filePathName':filePathName}
         return render(request,'upload.html',context) 
 

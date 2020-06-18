@@ -20,6 +20,7 @@ from finder import forms
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.Index.as_view(), name='index'),
-    path('upload/', forms.upload, name='upload')
-]
+    path('', forms.upload, name='upload'),
+    path('predictImage', views.Index.predictImage,name="predictImage"),   
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

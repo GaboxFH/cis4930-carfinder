@@ -59,24 +59,22 @@
 
 <center>
 {% block content %}
-<h1>Submit your image</h1>
+  <h1>Upload Image</h1>
 
-{% if submitted %}
-    <p class="success">
-        Your message was submitted successfully. Thank you.
-    </p>
+  <form method="post" enctype="multipart/form-data" action="predictImage">
 
-{% else %}
-    <form action="" method="post" novalidate>
-    <table>
-        {{ form.as_table }}
-        <tr>
-           <td>&nbsp;</td>
-           <td><input type="submit" value="Submit"></td>
-        </tr>
-    </table>
-    {% csrf_token %}
-    </form>
-{% endif %}
+{% csrf_token %}
+<div class = "col-md-4 col-sm-4"><label for="fname"></label> </div><input name = "filePath" type = "file" ><br><br>
+<br>
+
+<input type="submit" value="Submit"></div>
+
+<h2>The classification of the image is {{predictedLabel}}</h2>
+<img src={{filePathName}} alt='imagename'>
+{{filePathName}}
+
+</form>
+
+
 {% endblock content %}
 </center>

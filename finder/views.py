@@ -14,7 +14,11 @@ class Index(View):
     def predictImage(request):
         fileObj=request.FILES['filePath']
         fs=FileSystemStorage()
+        
         filePathName = fs.save(fileObj.name,fileObj)
         filePathName = fs.url(filePathName)
+
         context={'filePathName':filePathName}
-        return render(request,'upload.html',context)
+        return render(request,'upload.html',context) 
+
+

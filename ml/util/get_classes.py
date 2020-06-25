@@ -2,7 +2,7 @@ import os
 import sys
 import json
 
-# get list of classes and class to index object from folder names
+# get list of classes and class-to-index object from folder names
 def get_classes(folder_path):
     classes = os.listdir(folder_path)
     classes.sort()

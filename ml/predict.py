@@ -1,17 +1,22 @@
 import sys
+import json
+
+# allow imports from root
+sys.path.append('..')
 
 from ml import predictor
-from ml.util import get_classes
 
-checkpoint_path = 'checkpoint.pth'
-train_path = 'stanford-car-dataset-by-classes/car_data/train'
+checkpoint_path = 'model/checkpoint.pth'
+classes_path = 'model/classes.json'
 
 if (len(sys.argv) != 2):
     print('Expected 1 argument: image_path')
     sys.exit()
 image_path = sys.argv[1]
 
-classes, class_to_idx = get_classes.get_classes('stanford-car-dataset-by-classes/car_data/train')
+with open(classes_path, 'r') as fin:
+    classes = json.load(fin)
+
 num_classes = len(classes)
 print(f'{num_classes} classes')
 

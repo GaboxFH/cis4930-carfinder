@@ -3,10 +3,10 @@
 2. `pip install -r requirements.txt`
 
 # Use
-- `python3 ml/predict.py PATH-TO-IMAGE`
-  - For example, `python3 ml/predict.py test/images/2012-mercedes-benz-e350-fd.jpg`
+- `cd ml && python3 predict.py PATH-TO-IMAGE`
+  - For example, `cd ml && python3 predict.py test/images/2012-mercedes-benz-e350-fd.jpg`
 - python3 `get_classes.py` is to get the classes ist and classes to index dict from the dataset
-  - For example, `python3 get_classes.py stanford-car-dataset-by-classes/car_data/train`
+  - For example, `cd ml/util && python3 get_classes.py ../../stanford-car-dataset-by-classes/car_data/train`
   - It will save these as JSON objects: `classes.json` and `class_to_idx.json`
 
 # Notebooks and Training the Model

@@ -20,10 +20,11 @@ from finder import forms
 from django.conf.urls.static import static
 from django.conf import settings
 
+index = views.Index()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.Index.as_view(), name='index'),
     path('upload/', forms.upload, name='upload'),
-    path('upload/predictImage', views.Index.predictImage,name="predictImage"),   
+    path('upload/predictImage', index.predict_image, name="predictImage"),   
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

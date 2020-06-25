@@ -18,7 +18,7 @@ DATA_AUGMENT_TRANSFORM = transforms.Compose([transforms.Resize([256, 256]),
     transforms.RandomHorizontalFlip(),
     transforms.CenterCrop(224),
     transforms.ToTensor(),
-    transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])])
+    transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD)])
 
 # process the image in the same way as our training data
 def process_image(image_path):

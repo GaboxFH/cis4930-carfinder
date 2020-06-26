@@ -3,22 +3,30 @@ import numpy as np
 import torch
 from torchvision import datasets, transforms
 
-IMAGENET_MEAN = [0.485, 0.456, 0.406]
-IMAGENET_STD = [0.229, 0.224, 0.225]
+IMAGENET_MEAN = (0.485, 0.456, 0.406)
+IMAGENET_STD = (0.229, 0.224, 0.225)
+
+DEFAULT_MEAN = (0.5, 0.5, 0.5)
+DEFAULT_STD = (0.5, 0.5, 0.5)
 
  # downsize image res to 256, crop the center 224, and grayscale
-PREPROCESS_TRANSFORM = transforms.Compose([transforms.Resize([256, 256]),
+PREPROCESS_TRANSFORM = transforms.Compose([
+    transforms.Resize(256),
     transforms.CenterCrop(224),
     transforms.ToTensor(),
-    transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD)])
+    transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD)
+])
 
 # preprocess and rotate and flip images for more data
-DATA_AUGMENT_TRANSFORM = transforms.Compose([transforms.Resize([256, 256]),
-    transforms.RandomRotation(30),
+DATA_AUGMENT_TRANSFORM = transforms.Compose([
+    transforms.Resize(256),
+    # I would like to add random rotations, but they keep zeroing out the tensor...
+    # transforms.RandomRotation(30),
     transforms.RandomHorizontalFlip(),
     transforms.CenterCrop(224),
     transforms.ToTensor(),
-    transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD)])
+    transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD)
+])
 
 # process the image in the same way as our training data
 def process_image(image_path):

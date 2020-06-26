@@ -11,7 +11,8 @@ DEFAULT_STD = (0.5, 0.5, 0.5)
 
  # downsize image res to 256, crop the center 224, and grayscale
 PREPROCESS_TRANSFORM = transforms.Compose([
-    transforms.Resize(256),
+    # TODO: change this to `transforms.Resize((244,244))`. It is like this to conform with old checkpoint
+    transforms.Resize((244,244)),
     transforms.CenterCrop(224),
     transforms.ToTensor(),
     transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD)
@@ -23,7 +24,6 @@ DATA_AUGMENT_TRANSFORM = transforms.Compose([
     # I would like to add random rotations, but they keep zeroing out the tensor...
     # transforms.RandomRotation(30),
     transforms.RandomHorizontalFlip(),
-    transforms.CenterCrop(224),
     transforms.ToTensor(),
     transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD)
 ])

@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <div>
+        <h2 >The classification of the image is </h2>
+        <div class="img_div">
+            <img src={{filePathName}} alt='imagename'class="image"> 
+        </div>
+        <h2>{{predictedLabel}}</h2>
+    </div>
+</html>

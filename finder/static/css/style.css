@@ -1,0 +1,16 @@
+.header_upload{
+    color: black;
+    text-align: center;
+    /* position: relative;
+    right: 50px; */
+}
+
+.image{
+    display: flex;
+    max-height: 160px;
+}
+
+.img_div{
+    width: 60%;
+    height: 200px;
+}

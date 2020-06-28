@@ -7,6 +7,7 @@ from django.views import View
 from django.core.files.storage import FileSystemStorage
 
 class Index(View):
+    submitted = False
     def __init__(self):
         self._template = 'index.html'
         self._checkpoint_path = 'ml/model/checkpoint.pth'
@@ -31,11 +32,13 @@ class Index(View):
         pred_confs, pred_classes = self._predictor.predict(full_file_path)
 
         predicted_class = self._classes[pred_classes[0]]
-
+        submitted = True
         context={
             'filePathName': file_path,
-            'predictedLabel': predicted_class
+            'predictedLabel': predicted_class,
+            'submitted': submitted
             # 'pred_confs': pred_confs,
             # 'pred_classes': pred_classes
         }
+        
         return render(request,'upload.html',context)

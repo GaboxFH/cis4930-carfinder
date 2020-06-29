@@ -1,7 +1,6 @@
 import numpy as np
 import torch
 
-from torch import nn
 from torchvision import datasets, models
 from ml.util import process
 
@@ -26,7 +25,7 @@ class Predictor:
         num_classes = len(model.class_to_idx)
 
         # define the fully-connected layer to be a linear transformation from num_input_features to num_classes
-        model.fc = nn.Linear(num_input_features, num_classes)
+        model.fc = torch.nn.Linear(num_input_features, num_classes)
 
         # load the weights from the checkpoint
         model.load_state_dict(checkpoint['state_dict'], strict=False)
@@ -79,17 +78,20 @@ class Predictor:
     def plot_predictions(self, pred_confs, pred_classes, image_path):
         length = len(pred_classes)
         
-        # convert classes to names
+        # convert classes to names and get prediction probabilities
+        sum_confs = sum(pred_confs)
+        pred_probs = []
         names = []
         for i in range(length):
+            pred_probs.append(pred_confs[i] / sum_confs * 100)
             names.append(self._classes[pred_classes[i]])
 
         # create the plot
         plt.figure()
-        plt.xlabel('Confidence Score')
+        plt.xlabel('Confidence Percentage')
 
         y_ticks = np.arange(len(names))
-        plt.barh(y_ticks, pred_confs, color='blue')
+        plt.barh(y_ticks, pred_probs, color='blue')
         plt.yticks(y_ticks, names)
         plt.gca().invert_yaxis()
         

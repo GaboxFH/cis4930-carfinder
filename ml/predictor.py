@@ -4,28 +4,39 @@ import torch
 from torch import nn
 from torchvision import datasets, models
 from ml.util import process
+from matplotlib import pyplot as plt
 
 # class to load the model and process images
 class Predictor:
     # function to load model
-    def load_model(self, checkpoint_path, num_classes):
-        # use resnet34 for transfer learning
-        model = models.resnet34(pretrained=True)
-        num_input_filters = model.fc.in_features
-
-        # define the fully-connected layer to be a linear transformation from num_input_filters to num_classes
-        model.fc = nn.Linear(num_input_filters, num_classes)
-
-        # load weights and class mappings from checkpoint, and use cpu
+    def load_model(self, checkpoint_path):
+        # load the checkpoint and use cpu
         checkpoint = torch.load(checkpoint_path, map_location=torch.device('cpu'))
-        model.load_state_dict(checkpoint['state_dict'], strict=False)
+
+        # load resnet34 for transfer learning
+        model = models.resnet34(pretrained=True)
+
+        # get input features and classes
+        num_input_features = model.fc.in_features
         model.class_to_idx = checkpoint['class_to_idx']
+        num_classes = len(model.class_to_idx)
+
+        # define the fully-connected layer to be a linear transformation from num_input_features to num_classes
+        model.fc = nn.Linear(num_input_features, num_classes)
+
+        # load the weights from the checkpoint
+        model.load_state_dict(checkpoint['state_dict'], strict=False)
     
         return model
 
     def __init__(self, checkpoint_path, num_classes = 196):
         # load model and use cpu
         self._model = self.load_model(checkpoint_path, num_classes).cpu()
+        self._classes = list(self._model.class_to_idx.keys())
+    
+    @property
+    def classes(self):
+        return self._classes
 
     '''
     function to predict the class of an image
@@ -60,3 +71,24 @@ class Predictor:
         pred_classes = np.array(pred_classes)[0]
 
         return pred_confs, pred_classes
+
+    def plot_predictions(self, pred_confs, pred_classes, image_path):
+        length = len(pred_classes)
+        
+        # convert classes to names
+        names = []
+        for i in range(length):
+            names.append(self._classes[pred_classes[i]])
+
+        # create the plot
+        plt.figure()
+        plt.xlabel('Confidence Score')
+        plt.ylabel('Prediction')
+        plt.title('Confidence Scores')
+
+        y_ticks = np.arange(len(names))
+        plt.barh(y_ticks, pred_confs, color='blue')
+        plt.yticks(y_ticks, names)
+        plt.invert_yaxis()
+        
+        plt.save(image_path)

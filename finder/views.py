@@ -18,8 +18,13 @@ class Index(View):
         return render(request, self._template)
 
     def predict_image(self, request):
+        image_obj = request.FILES.get('filePath', None)
+
+        # if user did not upload an image, refresh
+        if image_obj is None:
+            return render(request, 'upload.html')
+
         fs = FileSystemStorage()
-        image_obj = request.FILES['filePath']
 
         # save the file and get the path
         image_name = fs.get_available_name(image_obj.name)
@@ -46,6 +51,5 @@ class Index(View):
             'plotImagePath': f'/{plot_image_path}',
             'submitted': submitted
         }
-        
         return render(request,'upload.html',context)
 

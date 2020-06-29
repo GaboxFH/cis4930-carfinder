@@ -21,7 +21,7 @@ PREPROCESS_TRANSFORM = transforms.Compose([
 DATA_AUGMENT_TRANSFORM = transforms.Compose([
     transforms.Resize((244, 244)),
     # careful with random rotations, they keep zeroing out the tensor...
-    transforms.RandomRotation(10),
+    # transforms.RandomRotation(10),
     transforms.RandomHorizontalFlip(),
     transforms.ToTensor(),
     transforms.Normalize(DEFAULT_MEAN, DEFAULT_STD)

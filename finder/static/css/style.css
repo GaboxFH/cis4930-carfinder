@@ -14,3 +14,13 @@
     width: 60%;
     height: 200px;
 }
+
+.plot{
+    display: flex;
+    max-height: 400px;
+}
+
+.plot_div{
+    width: 60%;
+    height: 420px;
+}

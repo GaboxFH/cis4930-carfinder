@@ -28,7 +28,7 @@ class Index(View):
 
         # save the file and get the path
         image_path = fs.save(image_name, image_obj)
-        fs.url(image_path)
+        image_path = fs.url(image_path)
         full_image_path = os.path.join('finder', 'static', 'media', image_name)
 
         # get prediction
@@ -37,16 +37,17 @@ class Index(View):
         
         # plot confidence scores
         plot_image_name = fs.get_available_name('plot.png')
-        plot_image_path = os.path.join('finder', 'static', 'media', plot_image_name)
-        self._predictor.plot_predictions(pred_confs, pred_classes, plot_image_path)
+        plot_image_path = os.path.join('media', plot_image_name)
+        full_plot_image_path = os.path.join('finder', 'static', plot_image_path)
+        self._predictor.plot_predictions(pred_confs, pred_classes, full_plot_image_path)
 
         submitted = True
 
         # update upload.html with context
         context={
-            'imagePath': full_image_path,
             'predictedLabel': predicted_class,
-            'plotImagePath': plot_image_path,
+            'imagePath': image_path,
+            'plotImagePath': f'/{plot_image_path}',
             'submitted': submitted
         }
         

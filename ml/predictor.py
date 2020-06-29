@@ -4,6 +4,10 @@ import torch
 from torch import nn
 from torchvision import datasets, models
 from ml.util import process
+
+# force matplotlib to not use Agg
+import matplotlib
+matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 
 # class to load the model and process images
@@ -29,9 +33,9 @@ class Predictor:
     
         return model
 
-    def __init__(self, checkpoint_path, num_classes = 196):
+    def __init__(self, checkpoint_path):
         # load model and use cpu
-        self._model = self.load_model(checkpoint_path, num_classes).cpu()
+        self._model = self.load_model(checkpoint_path).cpu()
         self._classes = list(self._model.class_to_idx.keys())
     
     @property
@@ -84,11 +88,11 @@ class Predictor:
         plt.figure()
         plt.xlabel('Confidence Score')
         plt.ylabel('Prediction')
-        plt.title('Confidence Scores')
 
         y_ticks = np.arange(len(names))
         plt.barh(y_ticks, pred_confs, color='blue')
         plt.yticks(y_ticks, names)
-        plt.invert_yaxis()
+        plt.gca().invert_yaxis()
         
-        plt.save(image_path)
+        plt.tight_layout()
+        plt.savefig(image_path)

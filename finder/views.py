@@ -20,13 +20,9 @@ class Index(View):
     def predict_image(self, request):
         fs = FileSystemStorage()
         image_obj = request.FILES['filePath']
-        
-        # remove spaces from file name and get a valid name
-        image_name = image_obj.name
-        image_name = image_name.replace('%20', '')
-        image_name = fs.get_available_name(image_name)
 
         # save the file and get the path
+        image_name = fs.get_available_name(image_obj.name)
         image_path = fs.save(image_name, image_obj)
         image_path = fs.url(image_path)
         full_image_path = os.path.join('finder', 'static', 'media', image_name)

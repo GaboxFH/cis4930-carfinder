@@ -87,7 +87,6 @@ class Predictor:
         # create the plot
         plt.figure()
         plt.xlabel('Confidence Score')
-        plt.ylabel('Prediction')
 
         y_ticks = np.arange(len(names))
         plt.barh(y_ticks, pred_confs, color='blue')

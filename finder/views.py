@@ -33,7 +33,14 @@ class Index(View):
         full_image_path = os.path.join('finder', 'static', 'media', image_name)
 
         # get prediction
-        pred_confs, pred_classes = self._predictor.predict(full_image_path)
+        try:
+            pred_confs, pred_classes = self._predictor.predict(full_image_path)
+        except:
+            context = {
+                'errorMessage': 'There was an error processing your image. Make sure it is not a corrupted image file.'
+            }
+            return render(request, 'error.html', context)
+        
         predicted_class = self._classes[pred_classes[0]]
         
         # plot confidence scores
@@ -51,5 +58,4 @@ class Index(View):
             'plotImagePath': f'/{plot_image_path}',
             'submitted': submitted
         }
-        return render(request,'upload.html',context)
-
+        return render(request, 'upload.html', context)

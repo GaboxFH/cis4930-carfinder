@@ -55,7 +55,12 @@
   <form method="post" enctype="multipart/form-data" action="predictImage">
 
 {% csrf_token %}
-<div class = "col-md-4 col-sm-4"><label for="fname"></label> </div><input name = "filePath" type = "file" ><br><br>
+<div class = "col-md-4 col-sm-4">
+  <label for="fname"></label>
+</div>
+<input name="filePath" type="file" accept="image/*;capture=camera" />
+<br>
+<br>
 <br>
 
 

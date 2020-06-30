@@ -53,3 +53,10 @@ class Index(View):
         }
         return render(request,'upload.html',context)
 
+    def list_of_cars(self,request):
+        return render(request, 'listOfCars.html')
+
+def error_404(self, request):
+    print('here')
+    return render(request,'index.html')
+

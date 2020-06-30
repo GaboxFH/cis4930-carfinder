@@ -39,6 +39,10 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/list">List of Cars</a>
+        </li>
         </ul>
       </div>
     </div>
@@ -55,7 +59,8 @@
   <form method="post" enctype="multipart/form-data" action="predictImage">
 
 {% csrf_token %}
-<div class = "col-md-4 col-sm-4"><label for="fname"></label> </div><input name = "filePath" type = "file" ><br><br>
+<div class = "col-md-4 col-sm-4"><label for="fname"></label> </div><input name = "filePath"  accept=".jpeg, .jpg"
+type = "file" ><br><br>
 <br>
 
 

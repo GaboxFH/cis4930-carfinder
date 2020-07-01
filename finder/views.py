@@ -56,7 +56,5 @@ class Index(View):
     def list_of_cars(self,request):
         return render(request, 'listOfCars.html')
 
-def error_404(self, request):
-    print('here')
-    return render(request,'index.html')
-
+def error_404(request, exception):
+    return render(request, 'index.html', status=404)

@@ -35,4 +35,4 @@ urlpatterns = [
     path('list/',index.list_of_cars, name='listOfCars')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# handler404 = views.error_404
+handler404 = 'finder.views.error_404'

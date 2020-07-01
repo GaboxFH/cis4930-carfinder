@@ -30,9 +30,18 @@ We used machine learning to identify a car's make, model, and year based solely 
 
 FindCar should be ready to use!
 
-#### (optional) Development Instructions
-To recreate the `dist/django-findcar-0.0.10.tar.gz` file, run the following command  
-- `sudo python3 setup.py sdist`
+# (optional) Development Setup
+#### Build
+1. To recreate the `dist/django-findcar-0.0.10.tar.gz` file, run the following command  
+  - `sudo python3 setup.py sdist`
+2. Then run the Setup Instructions above
+
+#### Run Source Code Directly
+1. `pip install -r requirements.txt`
+
+2. `python3 manage.py runserver`
+
+3. Go to `http://127.0.0.1:8000/` in a browser.
 
 # (optional) Virtual Env Setup
 1. once inside the project directory run `virtualenv . -p python3`

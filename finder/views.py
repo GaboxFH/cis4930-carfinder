@@ -58,4 +58,10 @@ class Index(View):
             'plotImagePath': f'/{plot_image_path}',
             'submitted': submitted
         }
-        return render(request, 'upload.html', context)
+        return render(request,'upload.html',context)
+
+    def list_of_cars(self,request):
+        return render(request, 'listOfCars.html')
+
+def error_404(request, exception):
+    return render(request, 'index.html', status=404)

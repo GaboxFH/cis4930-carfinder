@@ -1,4 +1,5 @@
 import os
+import finder
 
 from ml import predictor
 from django.shortcuts import render
@@ -30,7 +31,7 @@ class Index(View):
         image_name = fs.get_available_name(image_obj.name)
         image_path = fs.save(image_name, image_obj)
         image_path = fs.url(image_path)
-        full_image_path = os.path.join('finder', 'static', 'media', image_name)
+        full_image_path = os.path.join(os.path.dirname(finder.__file__), 'static', 'media', image_name)
 
         # get prediction
         try:
@@ -46,7 +47,7 @@ class Index(View):
         # plot confidence scores
         plot_image_name = fs.get_available_name('plot.png')
         plot_image_path = os.path.join('media', plot_image_name)
-        full_plot_image_path = os.path.join('finder', 'static', plot_image_path)
+        full_plot_image_path = os.path.join(os.path.dirname(finder.__file__), 'static', plot_image_path)
         self._predictor.plot_predictions(pred_confs, pred_classes, full_plot_image_path)
 
         submitted = True

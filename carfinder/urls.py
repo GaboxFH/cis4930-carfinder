@@ -1,5 +1,4 @@
 """carfinder URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
 Examples:
@@ -27,8 +26,6 @@ index = views.Index()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # url(r'^$', TemplateView.as_view(template_name='index.html'),
-    #     name='home'),
     path('', views.Index.as_view(), name='index'),
     path('upload/', forms.upload, name='upload'),
     path('upload/predictImage', index.predict_image, name="predictImage"),

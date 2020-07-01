@@ -34,5 +34,5 @@ urlpatterns = [
     path('upload/predictImage', index.predict_image, name="predictImage"),
     path('list/',index.list_of_cars, name='listOfCars')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
+# cmd to run the hadler python manage.py collectstatic
 handler404 = 'finder.views.error_404'

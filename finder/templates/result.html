@@ -1,10 +1,19 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+    <style>
+    .plot{
+        background-color:black;
+    }
+    
+    </style>
+
     <head>
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
+    
     <div>
+    <br>
         <h2>We predict your image is a</h2>
         <h2>{{predictedLabel}}</h2>
         <div class="img_div">
@@ -12,7 +21,7 @@
         </div>
         <br>
         <div class="plot_div">
-            <img src={{plotImagePath}} alt='Confidence Values' class='plot'>
+            <img src={{plotImagePath}} alt='Confidence Values' class='plot' >
         </div>
     </div>
 </html>

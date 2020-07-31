@@ -1,59 +1,75 @@
 {% load static %}
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-  
-    <title>FindCar</title>
-  
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  
-  </head>
-  <body>
+<head>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="/">FindCar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Home
-                <!-- <span class="sr-only">(current)</span> -->
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/upload">Upload Image
-              </a>
-            </li>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>FindCar</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">FindCar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home
+              <!-- <span class="sr-only">(current)</span> -->
+            </a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/list">List of Cars</a>
-            <span class="sr-only">(current)</span>
+          <li class="nav-item ">
+            <a class="nav-link" href="/upload">Upload Image</a>
           </li>
-          </ul>
-        </div>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/list">List of Cars
+          <span class="sr-only">(current)</span></a>
+        </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
     
   <!-- Header -->
-  <header class="bg-primary py-5 mb-5">
+  <header class="bg-primary py-5 mb-5"> 
   </header>
+  
+  
+<style>
+  .title{
+    text-align:center;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
+
 <body>
+<div class = 'title'>
 <h1>List of Cars</h1>
-<hr>
-<br>
-<div><table width="100%" border=1 cellpadding=1 cellspacing=2 style="background-color: #ffffff;">
+</div>
+
+<div class='table-wrapper'><table class='table' width="100%" border=1 cellpadding=1 cellspacing=2 style="background-color: #ffffff;">
 <tr valign=top>
 </tr>
 <tr valign=top>
@@ -373,6 +389,21 @@
 </tr>
 <tr valign=top>
 <td style="border-style: inset;">
+<p>Chevrolet Impala Sedan 2017</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Chevrolet Impala Sedan 2018</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Chevrolet Impala Sedan 2019</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
 <p>Chevrolet Malibu Hybrid Sedan 2010</p>
 </td>
 </tr>
@@ -404,6 +435,21 @@
 <tr valign=top>
 <td style="border-style: inset;">
 <p>Chevrolet Silverado 1500 Regular Cab 2012</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Chevrolet Silverado 1500 Regular Cab 2017</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Chevrolet Silverado 1500 Regular Cab 2018</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Chevrolet Silverado 1500 Regular Cab 2019</p>
 </td>
 </tr>
 <tr valign=top>
@@ -598,6 +644,21 @@
 </tr>
 <tr valign=top>
 <td style="border-style: inset;">
+<p>Ford Explorer SUV 2017</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Ford Explorer SUV 2018</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Ford Explorer SUV 2019</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
 <p>Ford F-150 Regular Cab 2007</p>
 </td>
 </tr>
@@ -619,6 +680,21 @@
 <tr valign=top>
 <td style="border-style: inset;">
 <p>Ford Focus Sedan 2007</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Ford Focus Sedan 2017</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Ford Focus Sedan 2018</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Ford Focus Sedan 2019</p>
 </td>
 </tr>
 <tr valign=top>
@@ -689,6 +765,36 @@
 <tr valign=top>
 <td style="border-style: inset;">
 <p>Honda Accord Sedan 2012</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Honda Accord Sedan 2017</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Honda Accord Sedan 2018</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Honda Accord Sedan 2019</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Honda Civic Sedan 2017</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Honda Civic Sedan 2018</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Honda Civic Sedan 2019</p>
 </td>
 </tr>
 <tr valign=top>
@@ -898,6 +1004,21 @@
 </tr>
 <tr valign=top>
 <td style="border-style: inset;">
+<p>Nissan Altima Sedan 2017</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Nissan Altima Sedan 2018</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Nissan Altima Sedan 2019</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
 <p>Nissan Juke Hatchback 2012</p>
 </td>
 </tr>
@@ -909,6 +1030,21 @@
 <tr valign=top>
 <td style="border-style: inset;">
 <p>Nissan NV Passenger Van 2012</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Nissan Maxima Sedan 2017</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Nissan Maxima Sedan 2018</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Nissan Maxima Sedan 2019</p>
 </td>
 </tr>
 <tr valign=top>
@@ -993,7 +1129,37 @@
 </tr>
 <tr valign=top>
 <td style="border-style: inset;">
+<p>Toyota Camry Sedan 2017</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Toyota Camry Sedan 2018</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Toyota Camry Sedan 2019</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
 <p>Toyota Corolla Sedan 2012</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Toyota Corolla Sedan 2017</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Toyota Corolla Sedan 2018</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Toyota Corolla Sedan 2019</p>
 </td>
 </tr>
 <tr valign=top>
@@ -1038,5 +1204,11 @@
 </tr>
 </table>
 </div>
+
+<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; FindCar 2020</p>
+    </div>
+</footer>
 
 </body></html>

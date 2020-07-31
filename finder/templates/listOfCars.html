@@ -1,0 +1,1204 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>FindCar</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">FindCar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                Home
+                <!-- <span class="sr-only">(current)</span> -->
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/upload">Upload Image</a>
+            </li>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/list">List of Cars
+              <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Header -->
+    <header class="py-4 mb-4">
+    </header>
+    <style>
+      .title{
+      text-align:center;
+      }
+      tr:nth-child(even) {background-color: #f2f2f2;}
+    </style>
+    <center>
+      <div class="col-md-8 mb-5">
+        <body>
+          <div class = 'title'>
+            <h1>List of Cars</h1>
+            <hr>
+          </div>
+          <p>The cars that our model was trained was collected from the <a href="https://www.kaggle.com/jutrera/stanford-car-dataset-by-classes-folder">Stanford Cars Dataset</a> as well as personally web-scraped cars from Google Images.
+          <div class='table-wrapper'>
+            <table class='table' width="100%" border=1 cellpadding=1 cellspacing=2 style="background-color: #ffffff;">
+              <tr valign=top>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>AM General Hummer SUV 2000</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Acura Integra Type R 2001</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Acura RL Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Acura TL Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Acura TL Type-S 2008</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Acura TSX Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Acura ZDX Hatchback 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Aston Martin V8 Vantage Convertible 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Aston Martin V8 Vantage Coupe 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Aston Martin Virage Convertible 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Aston Martin Virage Coupe 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Audi 100 Sedan 1994</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Audi 100 Wagon 1994</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Audi A5 Coupe 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Audi R8 Coupe 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Audi RS 4 Convertible 2008</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Audi S4 Sedan 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Audi S4 Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Audi S5 Convertible 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Audi S5 Coupe 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Audi S6 Sedan 2011</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Audi TT Hatchback 2011</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Audi TT RS Coupe 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Audi TTS Coupe 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Audi V8 Sedan 1994</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>BMW 1 Series Convertible 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>BMW 1 Series Coupe 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>BMW 3 Series Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>BMW 3 Series Wagon 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>BMW 6 Series Convertible 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>BMW ActiveHybrid 5 Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>BMW M3 Coupe 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>BMW M5 Sedan 2010</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>BMW M6 Convertible 2010</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>BMW X3 SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>BMW X5 SUV 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>BMW X6 SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>BMW Z4 Convertible 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Bentley Arnage Sedan 2009</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Bentley Continental Flying Spur Sedan 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Bentley Continental GT Coupe 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Bentley Continental GT Coupe 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Bentley Continental Supersports Conv. Convertible 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Bentley Mulsanne Sedan 2011</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Bugatti Veyron 16.4 Convertible 2009</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Bugatti Veyron 16.4 Coupe 2009</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Buick Enclave SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Buick Rainier SUV 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Buick Regal GS 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Buick Verano Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Cadillac CTS-V Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Cadillac Escalade EXT Crew Cab 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Cadillac SRX SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Avalanche Crew Cab 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Camaro Convertible 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Cobalt SS 2010</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Corvette Convertible 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Corvette Ron Fellows Edition Z06 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Corvette ZR1 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Express Cargo Van 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Express Van 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet HHR SS 2010</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Impala Sedan 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Impala Sedan 2017</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Impala Sedan 2018</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Impala Sedan 2019</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Malibu Hybrid Sedan 2010</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Malibu Sedan 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Monte Carlo Coupe 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Silverado 1500 Classic Extended Cab 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Silverado 1500 Extended Cab 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Silverado 1500 Hybrid Crew Cab 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Silverado 1500 Regular Cab 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Silverado 1500 Regular Cab 2017</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Silverado 1500 Regular Cab 2018</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Silverado 1500 Regular Cab 2019</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Silverado 2500HD Regular Cab 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Sonic Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Tahoe Hybrid SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet TrailBlazer SS 2009</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chevrolet Traverse SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chrysler 300 SRT-8 2010</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chrysler Aspen SUV 2009</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chrysler Crossfire Convertible 2008</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chrysler PT Cruiser Convertible 2008</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chrysler Sebring Convertible 2010</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Chrysler Town and Country Minivan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Daewoo Nubira Wagon 2002</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Dodge Caliber Wagon 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Dodge Caliber Wagon 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Dodge Caravan Minivan 1997</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Dodge Challenger SRT8 2011</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Dodge Charger SRT-8 2009</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Dodge Charger Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Dodge Dakota Club Cab 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Dodge Dakota Crew Cab 2010</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Dodge Durango SUV 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Dodge Durango SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Dodge Journey SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Dodge Magnum Wagon 2008</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Dodge Ram Pickup 3500 Crew Cab 2010</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Dodge Ram Pickup 3500 Quad Cab 2009</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Dodge Sprinter Cargo Van 2009</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Eagle Talon Hatchback 1998</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>FIAT 500 Abarth 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>FIAT 500 Convertible 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ferrari 458 Italia Convertible 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ferrari 458 Italia Coupe 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ferrari California Convertible 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ferrari FF Coupe 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Fisker Karma Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford E-Series Wagon Van 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford Edge SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford Expedition EL SUV 2009</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford Explorer SUV 2017</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford Explorer SUV 2018</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford Explorer SUV 2019</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford F-150 Regular Cab 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford F-150 Regular Cab 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford F-450 Super Duty Crew Cab 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford Fiesta Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford Focus Sedan 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford Focus Sedan 2017</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford Focus Sedan 2018</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford Focus Sedan 2019</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford Freestar Minivan 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford GT Coupe 2006</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford Mustang Convertible 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ford Ranger SuperCab 2011</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>GMC Acadia SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>GMC Canyon Extended Cab 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>GMC Savana Van 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>GMC Terrain SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>GMC Yukon Hybrid SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Geo Metro Convertible 1993</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>HUMMER H2 SUT Crew Cab 2009</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>HUMMER H3T Crew Cab 2010</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Honda Accord Coupe 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Honda Accord Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Honda Accord Sedan 2017</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Honda Accord Sedan 2018</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Honda Accord Sedan 2019</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Honda Civic Sedan 2017</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Honda Civic Sedan 2018</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Honda Civic Sedan 2019</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Honda Odyssey Minivan 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Honda Odyssey Minivan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Hyundai Accent Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Hyundai Azera Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Hyundai Elantra Sedan 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Hyundai Elantra Touring Hatchback 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Hyundai Genesis Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Hyundai Santa Fe SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Hyundai Sonata Hybrid Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Hyundai Sonata Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Hyundai Tucson SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Hyundai Veloster Hatchback 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Hyundai Veracruz SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Infiniti G Coupe IPL 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Infiniti QX56 SUV 2011</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Isuzu Ascender SUV 2008</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Jaguar XK XKR 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Jeep Compass SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Jeep Grand Cherokee SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Jeep Liberty SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Jeep Patriot SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Jeep Wrangler SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Lamborghini Aventador Coupe 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Lamborghini Diablo Coupe 2001</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Lamborghini Gallardo LP 570-4 Superleggera 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Lamborghini Reventon Coupe 2008</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Land Rover LR2 SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Land Rover Range Rover SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Lincoln Town Car Sedan 2011</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>MINI Cooper Roadster Convertible 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Maybach Landaulet Convertible 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Mazda Tribute SUV 2011</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>McLaren MP4-12C Coupe 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Mercedes-Benz 300-Class Convertible 1993</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Mercedes-Benz C-Class Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Mercedes-Benz E-Class Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Mercedes-Benz S-Class Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Mercedes-Benz SL-Class Coupe 2009</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Mercedes-Benz Sprinter Van 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Mitsubishi Lancer Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Nissan 240SX Coupe 1998</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Nissan Altima Sedan 2017</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Nissan Altima Sedan 2018</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Nissan Altima Sedan 2019</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Nissan Juke Hatchback 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Nissan Leaf Hatchback 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Nissan NV Passenger Van 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Nissan Maxima Sedan 2017</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Nissan Maxima Sedan 2018</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Nissan Maxima Sedan 2019</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Plymouth Neon Coupe 1999</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Porsche Panamera Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Ram C-V Cargo Van Minivan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Rolls-Royce Ghost Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Rolls-Royce Phantom Drophead Coupe Convertible 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Rolls-Royce Phantom Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Scion xD Hatchback 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Spyker C8 Convertible 2009</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Spyker C8 Coupe 2009</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Suzuki Aerio Sedan 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Suzuki Kizashi Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Suzuki SX4 Hatchback 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Suzuki SX4 Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Tesla Model S Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Toyota 4Runner SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Toyota Camry Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Toyota Camry Sedan 2017</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Toyota Camry Sedan 2018</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Toyota Camry Sedan 2019</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Toyota Corolla Sedan 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Toyota Corolla Sedan 2017</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Toyota Corolla Sedan 2018</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Toyota Corolla Sedan 2019</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Toyota Sequoia SUV 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Volkswagen Beetle Hatchback 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Volkswagen Golf Hatchback 1991</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Volkswagen Golf Hatchback 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Volvo 240 Sedan 1993</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Volvo C30 Hatchback 2012</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>Volvo XC90 SUV 2007</p>
+                </td>
+              </tr>
+              <tr valign=top>
+                <td style="border-style: inset;">
+                  <p>smart fortwo Convertible 2012</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+      </div>
+    </center>
+    <footer class="py-5 bg-dark">
+    <div class="container">
+    <p class="m-0 text-center text-white">Copyright &copy; FindCar 2020</p>
+    </div>
+    </footer>
+  </body>
+</html>

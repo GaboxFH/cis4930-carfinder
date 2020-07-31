@@ -1,5 +1,4 @@
 """carfinder URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
 Examples:
@@ -19,6 +18,9 @@ from finder import views
 from finder import forms
 from django.conf.urls.static import static
 from django.conf import settings
+from django.conf.urls import include, url, handler404
+# from django.views.generic.simple import direct_to_template
+from django.views.generic.base import TemplateView
 
 index = views.Index()
 
@@ -26,5 +28,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.Index.as_view(), name='index'),
     path('upload/', forms.upload, name='upload'),
-    path('upload/predictImage', index.predict_image, name="predictImage"),   
+    path('upload/predictImage', index.predict_image, name="predictImage"),
+    path('list/',index.list_of_cars, name='listOfCars')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# cmd to run the hadler python manage.py collectstatic
+handler404 = 'finder.views.error_404'

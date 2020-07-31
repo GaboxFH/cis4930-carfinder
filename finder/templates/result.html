@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <style>
+    .plot{
+    background-color:black;
+    }
+  </style>
+  <head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <div class="col-md-8 mb-5">
+    <br>
+    <h2>We predict your image is a</h2>
+    <h2>{{predictedLabel}}</h2>
+    <div>
+      <img src={{imagePath}} alt='Uploaded Image' class = "img-responsive" width = "100%">
+    </div>
+    <br>
+    <p>
+      Below is a graph of confidence percentages of our predictions. This is a rough estimate of how confident our model was in choosing the top prediction over the other predictions.
+    </p>
+    <br>
+    <div>
+      <img src={{plotImagePath}} alt='Confidence Values' class = "img-responsive" width = "100%" >
+    </div>
+  </div>
+</html>

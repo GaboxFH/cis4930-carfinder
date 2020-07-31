@@ -61,6 +61,10 @@
   <hr>
 <form method="post" enctype="multipart/form-data" action="predictImage" >
 
+  <h4>
+    Please note that our model cannot tell whether the image is a car or not. It also cannot classify images of cars that are not in our <a href="/list">List of Cars</a>.
+  </h4>
+  <br>
 {% csrf_token %}
 <div class = "col-md-4 col-sm-4">
   <label for="fname"></label>

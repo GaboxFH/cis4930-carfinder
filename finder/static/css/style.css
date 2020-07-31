@@ -17,7 +17,9 @@
 
 .plot{
     display: flex;
-    max-height: 400px;
+    max-width: 350px;
+    position: relative;
+    margin-left: -15%;
 }
 
 .plot_div{

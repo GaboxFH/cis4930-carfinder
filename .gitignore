@@ -139,5 +139,5 @@ __pychache__
 stanford-car-dataset-by-classes
 kaggle.json
 
-# temporary
-finder/static/media
+# media
+finder/media

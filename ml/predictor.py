@@ -75,8 +75,9 @@ class Predictor:
 
         return pred_confs, pred_classes
 
-    def plot_predictions(self, pred_confs, pred_classes, image_path):
-        length = len(pred_classes)
+    def plot_predictions(self, pred_confs, pred_classes, image_path, topk=5):
+        length = min(len(pred_classes), topk)
+        pred_confs = [(x if x > 0 else 0) for x in pred_confs]
         
         # convert classes to names and get prediction probabilities
         sum_confs = sum(pred_confs)

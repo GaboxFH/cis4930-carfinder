@@ -35,10 +35,12 @@ class Index(View):
 
         # get prediction
         try:
-            pred_confs, pred_classes = self._predictor.predict(full_image_path)
+            pred_confs, pred_classes = self._predictor.predict(full_image_path, topk=5)
         except:
             context = {
-                'errorMessage': 'There was an error processing your image. Make sure it is not a corrupted image file.'
+                'errorMessage': 'There was an error processing your image.\
+                Make sure it is not a corrupted or image file \
+                and that the image has no transparency layers.'
             }
             return render(request, 'error.html', context)
         
@@ -48,7 +50,7 @@ class Index(View):
         plot_image_name = fs.get_available_name('plot.png')
         plot_image_path = os.path.join('media', plot_image_name)
         full_plot_image_path = os.path.join(os.path.dirname(finder.__file__), 'static', plot_image_path)
-        self._predictor.plot_predictions(pred_confs, pred_classes, full_plot_image_path)
+        self._predictor.plot_predictions(pred_confs, pred_classes, full_plot_image_path, topk=5)
 
         submitted = True
 
